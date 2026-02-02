@@ -1,0 +1,21 @@
+.events {
+  padding: 60px 40px;
+}
+
+.events h2 {
+  color: #00629b;
+  margin-bottom: 30px;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 6px;
+  text-align: center;
+}
