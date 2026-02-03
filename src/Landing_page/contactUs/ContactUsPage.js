@@ -1,13 +1,52 @@
-import React from 'react';
+import React from "react";
+import "./ContactUs.css";
+import { FaMapMarkerAlt, FaUser, FaEnvelope } from "react-icons/fa";
 
-import ContactUs from './ContactUs';
+function VenueContact() {
+  return (
+    <section className="venue-section" id="venue">
+      <h1 className="venue-title">Venue & Contact</h1>
 
-function ContactUsPage() {
-    return ( 
-        <>
-            <ContactUs />
-        </>
-     );
+      <div className="venue-container">
+
+        {/* LEFT SIDE */}
+        <div className="contact-box">
+          <h2>Get In Touch</h2>
+
+          <div className="contact-item">
+            <FaMapMarkerAlt className="icon" />
+            <p>Army Institute of Technology, Pune, India</p>
+          </div>
+
+          <div className="contact-item">
+            <FaUser className="icon" />
+            <p>
+              Name,phone <br />
+              Name,phone 
+            </p>
+          </div>
+
+          <div className="contact-item">
+            <FaEnvelope className="icon" />
+            <p>
+              xyz[at]aitpune[dot]edu[dot]in <br />
+              abc[at]aitpune[dot]edu[dot]in
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE MAP */}
+        <div className="map-box">
+          <iframe
+            title="AIT Map"
+            src="https://www.google.com/maps?q=Army%20Institute%20of%20Technology%20Pune&output=embed"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+  );
 }
 
-export default ContactUsPage;
+export default VenueContact;
