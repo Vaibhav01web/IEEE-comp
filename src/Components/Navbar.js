@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./Navbar.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navBar">
       <div className="navbar-container">
         <div className="logo">AIT</div>
 
@@ -19,47 +19,23 @@ function Navbar() {
         </div>
 
         {/* Links */}
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li>
-            <Link aria-current="page" to={"/"}>
-                  Home
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/brochure"}>
-                  Brochure
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/about"}>
-                  About
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/Highlights"}>
-                  HighLights
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/callForPapers"}>
-                  Call For Papers
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/committee"}>
-                  committee
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/registration"}>
-                  Registration
-            </Link>
-          </li>
-          <li>
-            <Link aria-current="page" to={"/contactUs"}>
-                  Contact Us
-            </Link>
-          </li>
+        <ul className={`nav-link ${menuOpen ? "active" : ""}`}>
+          {[
+            ["/", "Home"],
+            ["/brochure", "Brochure"],
+            ["/about", "About"],
+            ["/Highlights", "HighLights"],
+            ["/callForPapers", "Call For Papers"],
+            ["/committee", "Committee"],
+            ["/registration", "Registration"],
+            ["/contactUs", "Contact Us"],
+          ].map(([path, label]) => (
+            <li key={path}>
+              <Link to={path} onClick={() => setMenuOpen(false)}>
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
