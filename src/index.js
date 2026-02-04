@@ -12,22 +12,26 @@ import BrochurePage from "./Landing_page/Brochure/BrochurePage";
 import CommitteePage from "./Landing_page/Committee/CommitteePage";
 import RegistrationPage from "./Landing_page/Registration/RegistrationPage";
 import ContactUsPage from "./Landing_page/contactUs/ContactUsPage";
+import CallForPapers from './Landing_page/callForPapers/CallForPapers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Navbar />
+    
     <Routes>
       <Route path='/' element={<HomePage />}></Route>
       <Route path='/brochure' element={<BrochurePage />}></Route>
       <Route path='/about' element={<AboutPage />}></Route>
       <Route path='/highlights' element={<HighlightsPage />}></Route>
-      <Route path='/callForPapers' element={<callForPapersPage />}></Route>
+      <Route path='/callForPapers' element={<CallForPapers />}></Route>
       <Route path='/committee' element={<CommitteePage />}></Route>
       <Route path='/registration' element={<RegistrationPage />}></Route>
       <Route path='/contactUs' element={<ContactUsPage />}></Route>
       
     </Routes>
+    
     <Footer />
   </BrowserRouter>
+   
 );
